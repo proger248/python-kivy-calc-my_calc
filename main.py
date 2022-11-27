@@ -2,11 +2,16 @@ from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
+from kivy.core.window import Window
+
+Window.size = (400, 600)
 
 
 class MainApp(App):
 
     def build(self):
+        self.title = "My Calculator"
+        self.icon = "icon.ico"
         main_layout = BoxLayout(orientation="vertical", padding=10, spacing=10)
         self.solution = TextInput(multiline=False, readonly=False, halign="right", font_size=55, input_filter="float")
         main_layout.add_widget(self.solution)
